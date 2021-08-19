@@ -37,6 +37,11 @@ const createAsyncSlice = (config) => {
         state.data = null;
         state.error = action.payload;
       },
+      resetState(state) {
+        state.loading = false;
+        state.data = null;
+        state.error = null;
+      },
       // novos reducers caso necessário
       ...config.reducers,
     },
